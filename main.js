@@ -32,9 +32,7 @@ async function readFileAsText(file) {
   // 参考 https://stackoverflow.com/a/46568146
   return await new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload = () => {
-      resolve(reader.result);
-    };
+    reader.onload = () => resolve(reader.result);
     reader.onerror = reject;
     reader.readAsText(file);
   });
